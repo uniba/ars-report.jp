@@ -613,13 +613,49 @@ span.allow {
 }
 #topics .primary01 .cBox .txt {
 	margin: 0 16px 16px 10px;
+	color: #7d7d7d;
 }
 /*--トピックス--*/
 #topics .primary02 {
-	padding: 0 18px 28px 22px;
+	padding: 0;
 	display: inline-block;
+}
+#topics .primary02 .cBox {
+	clear: both;
+}
+#topics .primary02 .cBox .grid332 {
+	float: left;
+	margin-right: 12px;
+	width: 332px;
+}
+#topics .primary02 .cBox .grid332-last {
+	float: left;
+	margin-right: 0;
+	width: 332px;
+}
+#topics .primary02 .cBox .grid308 {
+	float: left;
+	padding: 0 12px;
+	width: 308px;
 	background-color: #fcf6ed;
 }
+#topics .primary02 .cBox .lBox {
+	float: left;
+	margin: 0 0 24px 0;
+	width: 154px;
+	display: block;
+}
+#topics .primary02 .cBox .rBox {
+	float: right;
+	margin: 0 0 24px 0;
+	width: 154px;
+	display: block;
+}
+#topics .primary02 .cBox .txt {
+	margin: 0 10px 8px 10px;
+	color: #7d7d7d;
+}
+
 
 
 
