@@ -136,13 +136,16 @@ span.allow {
 	margin-bottom: 12px !important;
 }
 .ml16 {
-	margin-right: 16px !important;
+	margin-left: 16px !important;
 }
 .mb24 {
 	margin-bottom: 24px !important;
 }
 .mb36 {
 	margin-bottom: 36px !important;
+}
+.mb48 {
+	margin-bottom: 48px !important;
 }
 .ml24 {
 	margin-left: 24px !important;
@@ -520,6 +523,7 @@ span.allow {
 #howtogo table td.maintxt .title {
 	margin: 8px 0 6px 0;
 	font-size: 1.5em;
+	line-height: 130%;
 }
 #howtogo table td.sub {
 	padding: 16px 16px 16px 0;
@@ -974,8 +978,48 @@ span.allow {
 
 /*--editorial--*/
 #editorial {
+	margin: 0 0 84px 0;
+	line-height: 150%;
 }
-
+#editorial #titleBox {
+	padding: 37px 0 0 0;
+	height: 42px;/*79px*/
+}
+#editorial #titleBox h2 {
+	float: left;
+}
+#editorial .primary {
+	padding: 24px;
+	display: inline-block;
+	background-color: #f1f1f1;
+}
+#editorial .primary .baloon {
+	padding: 16px;
+	width: 940px;/*972px*/
+	background: #ffffff;
+}
+#editorial .primary .border {
+	padding: 0 24px 16px 24px;
+	width: 920px;/*972px*/
+	border-left: 2px solid #959595;
+	border-right: 2px solid #959595;
+	display: inline-block;
+	background: #ffffff;
+}
+#editorial .primary .border .grid624 {
+	float: left;
+	padding-right: 16px;
+	width: 608px;/*624px*/
+}
+#editorial .primary .border .grid296 {
+	float: right;
+	padding-top: 5px;
+	width: 296px;
+}
+#editorial .primary .border .photo {
+	float: left;
+	width: 296px;
+}
 
 /*
 ----------------------------------------------------------------------
