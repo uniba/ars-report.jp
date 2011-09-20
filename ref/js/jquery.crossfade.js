@@ -24,7 +24,7 @@
             current
                 .stop()
                 .animate({ opacity: 0 }, settings.speedOut, settings.easingOut, function() {
-					if (settings.callbackOut && typeof settings.callbackOut === 'function') {
+                    if (settings.callbackOut && typeof settings.callbackOut === 'function') {
                         settings.callbackOut();
                     }
                 });
