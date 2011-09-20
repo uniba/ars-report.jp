@@ -123,9 +123,6 @@ span.allow {
 .mt12 {
 	margin-top: 12px !important;
 }
-.ml16 {
-	margin-right: 16px !important;
-}
 .mb4 {
 	margin-bottom: 4px !important;
 }
@@ -415,6 +412,7 @@ span.allow {
 	background-position: 0 -126px;
 }
 
+
 /*--top btn coming soon--*/
 #top .bnt03-off {
 	margin: 0 0 24px 0;
@@ -446,6 +444,7 @@ span.allow {
 .likebtn {
 	margin: 0 0 12px 0;
 }
+
 
 /*--about--*/
 #about {
@@ -535,92 +534,7 @@ span.allow {
 
 /*--topics--*/
 #topics {
-	margin: 0 0 84px 0;
 }
-#topics #titleBox {
-	padding: 37px 0 0 0;
-	height: 42px;/*79px*/
-}
-#topics #titleBox h2 {
-	float: left;
-}
-#topics #titleBox .subnav {
-	float: right;
-	margin: 0;
-	width: 163px;
-	height: 22px;
-	display: inline-block;
-}
-#topics #titleBox .subnav ul {
-	display: inline-block;
-}
-#topics #titleBox .subnav ul li {
-	float: left;
-	margin:  0 25px 0 0;
-	display: block;
-	list-style: none;
-}
-#topics #titleBox .subnav ul li.bar {
-	margin: 17px 9px 0 0;
-}
-#topics #titleBox .subnav ul li.bar-last {
-	margin: 17px 4px 0 0;
-}
-#topics #titleBox .subnav ul li.btn {
-	margin: 12px 9px 0 0;
-}
-#topics .mapArea {
-	padding: 24px;
-	width: 974px;
-	height: 413px;
-	background-color: #fcf6ed;
-}
-/*--街を歩く--*/
-#topics .primary01 {
-	padding: 0 18px 28px 22px;
-	display: inline-block;
-	background-color: #fcf6ed;
-}
-#topics .primary01 .cBox {
-	clear: both;
-}
-#topics .primary01 .cBox .grid316 {
-	float: left;
-	margin-right: 16px;
-	width: 316px;
-}
-#topics .primary01 .cBox .grid316-last {
-	float: left;
-	margin-right: 0;
-	width: 316px;
-}
-#topics .primary01 .cBox .title {
-	margin: 0 0 8px 2px;
-}
-#topics .primary01 .cBox .lBox {
-	float: left;
-	margin: 0 0 16px 0;
-	width: 156px;
-	display: block;
-}
-#topics .primary01 .cBox .rBox {
-	float: right;
-	margin: 0 0 16px 0;
-	width: 156px;
-	display: block;
-}
-#topics .primary01 .cBox .txt {
-	margin: 0 16px 16px 10px;
-}
-/*--トピックス--*/
-#topics .primary02 {
-	padding: 0 18px 28px 22px;
-	display: inline-block;
-	background-color: #fcf6ed;
-}
-
-
-
 
 /*--report-top--*/
 #report-top {
@@ -732,11 +646,19 @@ span.allow {
 	float: left;
 	width: 324px;
 }
-#report .mapArea .imgarea-a-01 {
+#report .mapArea #imgarea-a-01 {
 	float: right;
 	margin: 24px 0;
 	width: 672px;
 	height: 482px;
+	overflow: hidden;
+}
+#report .mapArea #imgarea-a-01 .fadeitem {
+	position: absolute;
+	opacity: 0;
+}
+#report .mapArea #imgarea-a-01 .fadeitem.current {
+	opacity: 1;
 }
 #report .mapArea .txtarea {
 	float: right;
