@@ -157,10 +157,21 @@ span.allow {
 	. =Container
 ----------------------------------------------------------------------
 */
+
+
+#content-wrap {
+	margin: 0 auto 0 auto;
+	width: 1020px;
+	height: 100%;/*add*/
+    min-height: 100%;/*add*/
+}
+
+
 #container {
 	margin: 0 auto;
 	padding: 0; 
 	width: 1020px;
+	background: #ffffff;
 }
 
 /*
