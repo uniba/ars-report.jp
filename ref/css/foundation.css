@@ -646,11 +646,19 @@ span.allow {
 	float: left;
 	width: 324px;
 }
-#report .mapArea .imgarea-a-01 {
+#report .mapArea #imgarea-a-01 {
 	float: right;
 	margin: 24px 0;
 	width: 672px;
 	height: 482px;
+	overflow: hidden;
+}
+#report .mapArea #imgarea-a-01 .fadeitem {
+	position: absolute;
+	opacity: 0;
+}
+#report .mapArea #imgarea-a-01 .fadeitem.current {
+	opacity: 1;
 }
 #report .mapArea .txtarea {
 	float: right;
