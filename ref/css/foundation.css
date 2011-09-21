@@ -805,14 +805,16 @@ span.allow {
 }
 
 #report .mapArea #imgarea-a-01 #thumbnail .arrowLeft {
+	padding: 7px 1px 0 14px;
 	float: left;
 	width: 19px;
-	padding: 7px 1px 0 14px;
+	cursor: pointer;
 }
 #report .mapArea #imgarea-a-01 #thumbnail .arrowRight {
+	padding: 7px 12px 0 15px;
 	float: right;
 	width: 19px;
-	padding: 7px 12px 0 15px;
+	cursor: pointer;
 }
 #report .mapArea #imgarea-a-01 #thumbnail .thumbBox {
 	float: left;
