@@ -14,6 +14,7 @@ html {
 	background: #000000;
 }
 body {
+	width: 100%;
 	height: 100%;
 	text-align: left;
 	line-height: 140%;
@@ -169,16 +170,6 @@ span.allow {
 	. =Container
 ----------------------------------------------------------------------
 */
-
-
-#content-wrap {
-	margin: 0 auto 0 auto;
-	width: 1020px;
-	height: 100%;/*add*/
-    min-height: 100%;/*add*/
-}
-
-
 #container {
 	margin: 0 auto;
 	padding: 0; 
@@ -371,6 +362,7 @@ span.allow {
 /*--top--*/
 #top {
 	padding: 36px 0 0 0;
+	width: 100%;
 }
 #top .bnt01 a {
 	margin: 0 0 24px 0;
@@ -1164,6 +1156,7 @@ span.allow {
 #footer {
 	clear: both;
 	margin: 0;
+	width: 100%;
 	height: 184px;
 	background: #000000;
 }
