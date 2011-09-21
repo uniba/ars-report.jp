@@ -7,8 +7,7 @@ $(function() {
     , numPages       = thumbBox.children().length % thumbsPerPage != 0
                          ? Math.floor(thumbBox.children().length / thumbsPerPage + 1)
                          : thumbBox.children().length / thumbsPerPage
-    , pageCount      = 0
-    , thumbArrow;
+    , pageCount      = 0;
   
   $('.thumbBox img').each(function(i) {
   	$(this).mouseover(function() {
@@ -36,14 +35,15 @@ $(function() {
   });
   
   function arrowMouseDownHandler(e) {
-    $(e.target).one('mouseup', arrowMouseUpHandler);
+    $(e.target)
+      .unbind('mousedown')
+      .bind('mouseup', arrowMouseUpHandler);
    
-  	thumbArrow = $(this).children('img');
+  	var arrow = $(this).children('img');
+  	var src_hover  = getHoverSrc(arrow.attr('src'));
   	
-  	var src_hover  = getHoverSrc(thumbArrow.attr('src'));
-  	
-  	thumbArrow.attr('src', src_hover);
-  	
+  	arrow.attr('src', src_hover);
+  	console.log(numPages);
   	if ($(e.target).parent().hasClass('arrowRight')) {
   	  console.log('right');
   	  ++pageCount;
@@ -53,6 +53,7 @@ $(function() {
   	  	}, 500);
   	} else {
   	  pageCount = Math.max(0, --pageCount);
+  	  console.log('left', pageCount);
   	  thumbBox
   	    .animate({
   	  	  'marginLeft': '+=' + 592 + 'px'
@@ -61,28 +62,35 @@ $(function() {
   }
   
   function arrowMouseUpHandler(e) {
+  	$('.arrowLeft, .arrowRight').unbind();
+  	
   	if (0 < pageCount && numPages - 1 > pageCount) {
+  	  console.log('#1', pageCount);
   	  $('.arrowLeft')
-  	   .one('mousedown', arrowMouseDownHandler)
-  	   .children('img')
-  	   .attr('src', '../ref/images/report/01/arrow-left.png');
-  	   
+  	    .bind('mousedown', arrowMouseDownHandler)
+  	    .children('img')
+  	    .attr('src', '../ref/images/report/01/arrow-left.png');
+  	  
   	  $('.arrowRight')
-  	    .one('mousedown', arrowMouseDownHandler)
+  	    .bind('mousedown', arrowMouseDownHandler)
   	    .children('img')
   	    .attr('src', '../ref/images/report/01/arrow-right.png');
   	} else if (0 == pageCount) {
+  	  console.log('#2', pageCount);
   	  $('.arrowLeft')
   	   .children('img')
   	   .attr('src', '../ref/images/report/01/arrow-left_off.png');
   	   
   	  $('.arrowRight')
+  	    .bind('mousedown', arrowMouseDownHandler)
   	    .children('img')
   	    .attr('src', '../ref/images/report/01/arrow-right.png');
   	} else if (numPages == pageCount + 1) {
+  	  console.log('#3', pageCount);
       $('.arrowLeft')
-  	   .children('img')
-  	   .attr('src', '../ref/images/report/01/arrow-left.png');
+        .bind('mousedown', arrowMouseDownHandler)
+  	    .children('img')
+  	    .attr('src', '../ref/images/report/01/arrow-left.png');
   	   
   	  $('.arrowRight')
   	    .children('img')
@@ -91,8 +99,8 @@ $(function() {
   }
   
   $('#thumbnail > ' + arrowContainer)
-    .one('mousedown', arrowMouseDownHandler);
-  
+    .bind('mousedown', arrowMouseDownHandler);
+    
   function getHoverSrc(srcstr) {
   	return srcstr.substr(0, srcstr.lastIndexOf('.'))
   	     + (srcstr.indexOf('_o') == -1 ? '_o' : '')
