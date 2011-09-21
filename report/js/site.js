@@ -14,4 +14,10 @@ $(function() {
       speedOut: 1000
     });
   }, 4000);
+  
+  $('#thumbnail .arrow').click(function(e) {
+  	var imgs = $(this).parent().children().not('.arrow');
+  	imgs = Array.prototype.slice.call(imgs);
+  	console.log(imgs);
+  });
 });
