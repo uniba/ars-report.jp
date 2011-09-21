@@ -796,20 +796,31 @@ span.allow {
 	top: 418px;
 	left: 0;
 	background: url(../images/report/01/bg_thumbnail.png) no-repeat center top;
+}
+
+#report .mapArea #imgarea-a-01 #thumbnail .arrowLeft {
+	float: left;
+	width: 19px;
+	padding: 7px 1px 0 14px;
+}
+#report .mapArea #imgarea-a-01 #thumbnail .arrowRight {
+	float: right;
+	width: 19px;
+	padding: 7px 12px 0 15px;
+}
+#report .mapArea #imgarea-a-01 #thumbnail .thumbBox {
+	float: left;
+	width: 592px;
 	overflow: hidden;
 }
-#report .mapArea #imgarea-a-01 #thumbnail ul {
+#report .mapArea #imgarea-a-01 #thumbnail .thumbBox ul {
 }
-#report .mapArea #imgarea-a-01 #thumbnail ul li {
+#report .mapArea #imgarea-a-01 #thumbnail .thumbBox ul li {
 	float: left;
-	margin: 0 0 10px 10px;
+	margin: 0 0 10px 12px;
 	display: block;
 	list-style: none;
 }
-#report .mapArea #imgarea-a-01 #thumbnail ul li.arrow {
-	margin: 17px 0 0 7px;
-}
-
 #report .mapArea .txtarea {
 	float: right;
 	margin: 24px 0;
