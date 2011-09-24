@@ -2,18 +2,20 @@ $(function() {
   $('#gnav ul li a').blend();
   
   var arrowContainer = '.arrowRight'
+    , pageCount      = 0
     , thumbsPerPage  = 8
     , thumbBox       = $('.thumbBox > ul')
     , numPages       = thumbBox.children().length % thumbsPerPage != 0
                          ? Math.floor(thumbBox.children().length / thumbsPerPage + 1)
-                         : thumbBox.children().length / thumbsPerPage
-    , pageCount      = 0;
+                         : thumbBox.children().length / thumbsPerPage;
   
   $('.thumbBox img').each(function(i) {
   	$(this).mouseover(function() {
   	  var src = this.src
   	    , src_hover = getHoverSrc(src);
+  	  
   	  this.src = src_hover;
+  	  
   	  $(this)
   	    .click(function() {
   	      var prev = $('.fadeitem.current')
