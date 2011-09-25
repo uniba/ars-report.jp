@@ -41,7 +41,7 @@ $(function() {
       .unbind('mousedown')
       .bind('mouseup', arrowMouseUpHandler);
    
-  	var arrow = $(this).children('img');
+  	var arrow      = $(this).children('img');
   	var src_hover  = getHoverSrc(arrow.attr('src'));
   	
   	arrow.attr('src', src_hover);
