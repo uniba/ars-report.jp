@@ -20,7 +20,7 @@ $(function() {
   	    .click(function() {
   	      var prev = $('.fadeitem.current')
   	        , next = $('.fadeitem')[i];
-  	      console.log(prev, next);
+  	      
   	      $(next).crossFade(prev, {
   	      	callbackIn: function() {
   	      	  $(prev).removeClass('current');
@@ -48,18 +48,15 @@ $(function() {
   	  	
   	if ($(e.target).parent().hasClass('arrowRight')) {
   	  ++pageCount;
-  	  thumbBox.trigger('next', 8);
-  	  console.log('right', pageCount);
+  	  thumbBox.trigger('next', thumbsPerPage);
   	} else {
   	  pageCount = Math.max(0, --pageCount);
-  	  thumbBox.trigger('prev', 8);
-  	  console.log('left', pageCount);
+  	  thumbBox.trigger('prev', thumbsPerPage);
   	 }
   }
   
   function arrowMouseUpHandler(e) {
   	if (0 < pageCount && numPages - 1 > pageCount) {
-  	  console.log('#1', pageCount);
   	  $('.arrowLeft')
   	    .unbind()
   	    .bind('mousedown', arrowMouseDownHandler)
@@ -71,7 +68,6 @@ $(function() {
   	    .children('img')
   	    .attr('src', '../ref/images/report/01/arrow-right.png');
   	} else if (0 == pageCount) {
-  	  console.log('#2', pageCount);
   	  $('.arrowLeft')
   	   .children('img')
   	   .attr('src', '../ref/images/report/01/arrow-left_off.png');
@@ -82,8 +78,7 @@ $(function() {
   	    .children('img')
   	    .attr('src', '../ref/images/report/01/arrow-right.png');
   	} else if (numPages == pageCount + 1) {
-  	  console.log('#3', pageCount);
-      $('.arrowLeft')
+  	  $('.arrowLeft')
         .unbind()
         .bind('mousedown', arrowMouseDownHandler)
   	    .children('img')
