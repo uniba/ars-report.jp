@@ -20,7 +20,7 @@ $(function() {
   	    .click(function() {
   	      var prev = $('.fadeitem.current')
   	        , next = $('.fadeitem')[i];
-  	      
+  	      console.log(prev, next);
   	      $(next).crossFade(prev, {
   	      	callbackIn: function() {
   	      	  $(prev).removeClass('current');
@@ -35,40 +35,33 @@ $(function() {
   	    });
   	});
   });
-  
+    
   function arrowMouseDownHandler(e) {
     $(e.target)
-      .unbind('mousedown')
+      .unbind()
       .bind('mouseup', arrowMouseUpHandler);
    
   	var arrow      = $(this).children('img');
   	var src_hover  = getHoverSrc(arrow.attr('src'));
   	
   	arrow.attr('src', src_hover);
-  	console.log(numPages);
+  	  	
   	if ($(e.target).parent().hasClass('arrowRight')) {
-  	  console.log('right');
   	  ++pageCount;
-  	  thumbBox
-  	    .animate({
-  	  	  'marginLeft': '-' + 592 * Math.min(numPages, pageCount) + 'px'
-  	  	}, 500);
+  	  thumbBox.trigger('next', 8);
+  	  console.log('right', pageCount);
   	} else {
   	  pageCount = Math.max(0, --pageCount);
+  	  thumbBox.trigger('prev', 8);
   	  console.log('left', pageCount);
-  	  thumbBox
-  	    .animate({
-  	  	  'marginLeft': '+=' + 592 + 'px'
-  	  	}, 500);
   	 }
   }
   
   function arrowMouseUpHandler(e) {
-  	$('.arrowLeft, .arrowRight').unbind();
-  	
   	if (0 < pageCount && numPages - 1 > pageCount) {
   	  console.log('#1', pageCount);
   	  $('.arrowLeft')
+  	    .unbind()
   	    .bind('mousedown', arrowMouseDownHandler)
   	    .children('img')
   	    .attr('src', '../ref/images/report/01/arrow-left.png');
@@ -84,12 +77,14 @@ $(function() {
   	   .attr('src', '../ref/images/report/01/arrow-left_off.png');
   	   
   	  $('.arrowRight')
+  	    .unbind()
   	    .bind('mousedown', arrowMouseDownHandler)
   	    .children('img')
   	    .attr('src', '../ref/images/report/01/arrow-right.png');
   	} else if (numPages == pageCount + 1) {
   	  console.log('#3', pageCount);
       $('.arrowLeft')
+        .unbind()
         .bind('mousedown', arrowMouseDownHandler)
   	    .children('img')
   	    .attr('src', '../ref/images/report/01/arrow-left.png');
@@ -100,9 +95,14 @@ $(function() {
   	}
   }
   
-  $('#thumbnail > ' + arrowContainer)
+  $('#thumbnail > .arrowRight')
     .bind('mousedown', arrowMouseDownHandler);
     
+  thumbBox.carouFredSel({
+    auto: false,
+    scroll: { duration: 500 }
+  });
+  
   function getHoverSrc(srcstr) {
   	return srcstr.substr(0, srcstr.lastIndexOf('.'))
   	     + (srcstr.indexOf('_o') == -1 ? '_o' : '')
