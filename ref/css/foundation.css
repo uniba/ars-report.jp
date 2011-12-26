@@ -1121,6 +1121,15 @@ span.allow {
 	display: inline-block;
 	background: #ffffff;
 }
+#editorial .primary .border .deadline {
+	font-weight: bold;
+	text-decoration: line-through;
+}
+#editorial .primary .border .deadline span {
+	margin-left: 12px;
+	text-decoration: none;
+	color: #ff0000;
+}
 #editorial .primary .border .grid624 {
 	float: left;
 	padding-right: 16px;
